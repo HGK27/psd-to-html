@@ -1,0 +1,606 @@
+@import 'mixin';
+
+$colorGreen: rgb(95, 197, 86);
+$buttonMargin: 15px 5px 15px 5px;
+$buttonPadding: 5px 12px 5px 12px;
+$borderRadius: 25px;
+$titleFontSize: 20px;
+$titleFontSizeTablet:30px;
+$titleFontSizeDesktop:40px;
+$titleFontWeight: 700;
+
+body{
+  font-family: 'Merriweather Sans', sans-serif !important;
+}
+.color{
+  color: $colorGreen;
+}
+.nopadding{
+  padding: 0 !important;
+}
+.nomargin{
+  margin:0 !important;
+}
+
+.icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  color: black;
+}
+
+.icon-leaf{
+  color: white;
+  width: 36px;
+  height: 36px;
+  background-color: $colorGreen;
+  border-radius: 50%;
+  margin: $buttonMargin;
+  padding: 7px;
+}
+
+.justRelaxIcon{
+  color:white;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.lastestIcon{
+  padding: 5px 5px 5px 8px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+.cultureIcon{
+  border:1px solid black;
+  border-radius: 50%;
+  opacity: 0.6;
+  padding: 5px;
+
+  @include mq('tablet'){
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+}
+.footerIcon{
+  color:white;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  padding: 5px;
+}
+.footerSocialIcon{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px;
+}
+#navbar{
+  @include mq('desktop'){
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 99999;
+    transition: .5s;
+  }
+}
+
+.menu{
+    height: 120px;
+
+    &-logo { 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 15px;
+      &-title h1{
+        font-size: 20px;
+         margin: 0;
+      }
+    }
+    &-right{
+    width: 100%;
+    box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    background-color: white;
+    position: relative;
+    top: 50px;  
+
+      @include mq("desktop"){
+        width: auto;
+        box-shadow: 0px 0px 0px;
+        top: 0;  
+      }
+
+      &-item{
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: $buttonMargin;
+      padding: $buttonPadding;
+      color:rgba(0, 0, 0, 0.8);
+
+        &.is-show{
+          display: flex;
+        }
+
+        @include mq("desktop"){
+          display: inline;
+          width: inherit;
+          position: relative;
+        }
+      }
+
+      &-item:hover{
+        opacity: 1;
+        border-top: 2px solid $colorGreen;
+        transition: 0.1s;
+        transition-duration: 0.1s;
+        color:$colorGreen
+      }
+     
+      &-menuLine{
+      display: flex;
+      position: absolute;
+      top:5px;
+      right: 0;
+      margin: $buttonMargin;
+      padding: $buttonPadding;
+         @include mq("desktop"){
+          display: none;
+        }
+      }
+    }
+}
+
+.image{
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+
+  &-art{
+    position: absolute;
+    top:45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    text-align: center;
+    z-index: 1;    
+
+    @include mq("desktop"){
+        width: 100%;
+      }
+
+      & button{
+        margin-top:25px;
+        border-radius: $borderRadius;
+        font-size: 0.8rem;
+        padding: 15px 25px;
+      }
+      & h2{
+        font-size: 30px;
+
+         @include mq("tablet"){
+          font-size: 40px;
+        }
+        @include mq("desktop"){
+          font-size: 60px;
+        }
+      }
+        & p{
+          display: none;
+
+          @include mq("tablet"){
+            margin-top: 10px;
+            letter-spacing: 1px;
+            display: block;
+          }
+          @include mq("desktop"){
+            margin-top: 15px;
+            letter-spacing: 2px;
+            display: block;
+          }
+        }
+  }
+  &-image{
+    background-color: black;
+    & img{
+      width: 220%;
+      opacity: 0.6;
+      z-index: -1;
+
+      @include mq("tablet"){
+        width: 150%;
+      }
+      @include mq("desktop"){
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.services{
+  text-align: center;
+  padding: 5px;
+  &-title{
+    margin-top: 10px;
+    
+    & h3{
+      font-size: $titleFontSize;
+      font-weight: $titleFontWeight;
+        @include mq("tablet"){
+          margin-top: 30px;
+          font-size: $titleFontSizeTablet;
+        }
+        @include mq("desktop"){
+          margin-top: 50px;
+          font-size: $titleFontSizeDesktop;
+        }
+    }
+  }
+  &-image{
+    margin: 25px;
+  }
+
+}
+
+.justRelax{
+  width: 100%;
+  height: 475px;
+  overflow: hidden;
+  margin-top: 50px;
+  &-art{
+    position: absolute;
+    top: 15px;
+    color: white;
+    z-index: 1;
+    padding: 15px;
+          @include mq("tablet"){
+            left: 150px;
+          }
+          @include mq("desktop"){
+            left: 350px;
+          }    
+    & h3 {
+      font-size: $titleFontSize ;
+      font-weight: $titleFontWeight;
+          @include mq("tablet"){
+            font-size: $titleFontSizeTablet ;
+          }
+          @include mq("desktop"){
+            font-size: $titleFontSizeDesktop ;
+          }
+    }
+    & p {
+      font-size: 12px ;
+          @include mq("tablet"){
+            font-size: 18px ;
+          }
+          @include mq("desktop"){
+            font-size: 25px ;
+          }
+    }
+    & button{
+        margin-top:25px;
+        border-radius: $borderRadius;
+        font-size: 0.8rem;
+        padding: 15px 25px;
+    }
+  }
+
+  &-image {
+    background-color: black;
+    & img{
+    width: 200%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.6;
+        @include mq("tablet"){
+         width: 100%;
+        }
+    }
+  }
+}
+
+.lastest{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+  &-art{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+      @include mq("tablet"){
+        position: relative;
+        left: 100px;
+      }
+
+    &-col{
+      margin-top: 20px;
+    }
+  }
+
+  &-title{
+    text-align: center;
+    & h3{
+      font-size: $titleFontSize;
+      font-weight: $titleFontWeight;
+
+        @include mq("tablet"){
+          font-size: $titleFontSizeTablet;
+        }
+        @include mq("desktop"){
+          font-size: $titleFontSizeDesktop;
+        }
+    }
+  }
+  &-image{
+    display: none;
+    position: relative;
+    left: 0;
+    z-index: -1;
+    & img{
+      width: 125%;
+    }
+    @include mq("tablet"){
+          display: block;
+    }
+  }
+}
+
+.culture{
+  background-color: rgba(228, 227, 227, 0.5);
+  margin-top: 40px;
+
+  &-title{
+    text-align: center;
+    margin-top: 40px;
+    & h3{
+      font-size: $titleFontSize;
+      font-weight: $titleFontWeight;
+
+        @include mq("tablet"){
+          font-size: $titleFontSizeTablet;
+        }
+        @include mq("desktop"){
+          font-size: $titleFontSizeDesktop;
+        }
+    }
+  }
+  &-circ{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    &-icon{
+      text-align: center;
+
+      &-borderCenter{
+        border-bottom: 1px solid black;
+        width: 100%;
+        transform: translateY(-80%);
+        opacity: 0.6;
+        margin-left: 10px;
+      }
+    }
+  }
+  &-art{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    &-display{
+      display: none;
+        @include mq("tablet"){
+          display:block;
+        }
+    }
+  }
+}
+
+.client{
+   &-title{
+    text-align: center;
+    margin-top: 40px;
+    & h3{
+      font-size: $titleFontSize;
+      font-weight: $titleFontWeight;
+
+        @include mq("tablet"){
+          font-size: $titleFontSizeTablet;
+        }
+        @include mq("desktop"){
+          font-size: $titleFontSizeDesktop;
+        }
+    }
+  }
+
+  &-art{
+
+    &-image{
+      display: none;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      @include mq("tablet"){
+        display: block;
+      }
+    }
+
+    &-frame{
+      background-color: rgba(224, 222, 222, 0.5);
+      border-radius: 2px;
+      margin-top: 40px;
+        &-comment{
+          padding: 30px;
+      }
+      &-customer{
+        text-align: center;
+        font-size: 12px;
+      }
+    } 
+      &-arrowgrup{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+        &-arrow1 {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-top: 10px solid transparent;
+            border-right: 10px solid  rgba(224, 222, 222, 0.5);
+            position: relative;
+            top: .6rem;
+        }
+        &-arrow2 {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid rgba(224, 222, 222, 0.5);
+            position: relative;
+            top: .6rem;
+        }
+        &-arrow3 {
+            width: 0;
+            height: 0;
+            border-right: 10px solid transparent;
+            border-top: 10px solid transparent;
+            border-left: 10px solid rgba(224, 222, 222, 0.5);
+            position: relative;
+            top: .6rem;
+        }
+        &-arrow4 {
+            width: 0;
+            height: 0;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid rgba(224, 222, 222, 0.5);
+            position: relative;
+            top: .6rem;
+        }
+              @include mq("tablet"){
+               
+              }
+    }
+  }
+}
+
+.contact{
+  width: 100%;
+  display: grid;
+  gap: 25px;
+  background-color: $colorGreen;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 40px;
+
+    @include mq("tablet"){
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+  &-readyTo{
+    text-align: center ;
+    color: white;
+    margin-top: 20px;
+    & h3{
+        @include mq("tablet"){
+          font-size:2rem ;
+        }
+
+        @include mq("desktop"){
+            font-size: 2.5rem;
+        }
+      }
+  }
+  &-contactUs{
+    text-align: center;
+
+    &-button{
+      padding: 10px 30px 10px 30px;
+      background-color: transparent;
+      border-radius: 5px;
+      border:2px solid white;
+      color: white;
+    }
+      &-button:hover{
+      background-color: rgba(15, 60, 5, 0.3);
+      border:2px solid $colorGreen;
+      transition: .2s;
+    }
+  }
+}
+
+.footer{
+  color: white;
+  width: 100%;
+  background-color: black;
+  padding-top: 25px;
+  
+  &-frame{
+    margin-top: 25px;
+    padding-bottom: 25px;
+
+    &-art{
+      margin-top: 7px;
+    }
+  }
+  &-socialMediaCopy{
+    width: 100%;
+    background-color: white;
+    position: static;;
+    bottom: 0px;
+    margin-top: 25px;
+      &-social{
+        text-align: center;
+        padding: 25px;
+
+        @include mq("desktop"){
+          position: relative;
+          top:15px
+        }
+        &-hover{
+          display: inline;
+          padding: 10px;
+        }
+        &-hover:hover{
+          opacity: 0.6;
+        }
+
+      }
+      &-copyRight{
+          text-align: center;
+          
+            @include mq("desktop"){
+                text-align: left;
+                position: absolute;
+                bottom:15px;
+            }
+      }
+  }
+}

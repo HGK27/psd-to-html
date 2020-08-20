@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="author" content="Gürhan KIRIMLILAR">
+  <meta name="Description" content="Gürhan KIRIMLILAR tarafından yapılan bir Front-End çalışması.">
+  <title>TREEHOUSE</title>
+
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="http://www.82ekran.com/wp-content/themes/82ekran2020/img/ikon.png" type="image/x-icon">
+
+  <script type="text/javascript" src="/index.js" defer></script>
+
+</head>
+
+<body>
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-newspaper" viewBox="0 0 32 32">
+        <path
+          d="M28 8v-4h-28v22c0 1.105 0.895 2 2 2h27c1.657 0 3-1.343 3-3v-17h-4zM26 26h-24v-20h24v20zM4 10h20v2h-20zM16 14h8v2h-8zM16 18h8v2h-8zM16 22h6v2h-6zM4 14h10v10h-10z">
+        </path>
+      </symbol>
+      <symbol id="icon-music" viewBox="0 0 32 32">
+        <path
+          d="M30 0h2v23c0 2.761-3.134 5-7 5s-7-2.239-7-5c0-2.761 3.134-5 7-5 1.959 0 3.729 0.575 5 1.501v-11.501l-16 3.556v15.444c0 2.761-3.134 5-7 5s-7-2.239-7-5c0-2.761 3.134-5 7-5 1.959 0 3.729 0.575 5 1.501v-19.501l18-4z">
+        </path>
+      </symbol>
+      <symbol id="icon-envelop" viewBox="0 0 32 32">
+        <path
+          d="M29 4h-26c-1.65 0-3 1.35-3 3v20c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-20c0-1.65-1.35-3-3-3zM12.461 17.199l-8.461 6.59v-15.676l8.461 9.086zM5.512 8h20.976l-10.488 7.875-10.488-7.875zM12.79 17.553l3.21 3.447 3.21-3.447 6.58 8.447h-19.579l6.58-8.447zM19.539 17.199l8.461-9.086v15.676l-8.461-6.59z">
+        </path>
+      </symbol>
+      <symbol id="icon-location" viewBox="0 0 32 32">
+        <path
+          d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z">
+        </path>
+      </symbol>
+      <symbol id="icon-mobile2" viewBox="0 0 32 32">
+        <path
+          d="M24 0h-18c-1.1 0-2 0.9-2 2v28c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-28c0-1.1-0.9-2-2-2zM15 30.556c-0.859 0-1.556-0.697-1.556-1.556s0.697-1.556 1.556-1.556 1.556 0.697 1.556 1.556-0.697 1.556-1.556 1.556zM24 26h-18v-22h18v22z">
+        </path>
+      </symbol>
+      <symbol id="icon-user-tie" viewBox="0 0 32 32">
+        <path
+          d="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z">
+        </path>
+      </symbol>
+      <symbol id="icon-lock" viewBox="0 0 32 32">
+        <path
+          d="M18.5 14h-0.5v-6c0-3.308-2.692-6-6-6h-4c-3.308 0-6 2.692-6 6v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v15c0 0.825 0.675 1.5 1.5 1.5h17c0.825 0 1.5-0.675 1.5-1.5v-15c0-0.825-0.675-1.5-1.5-1.5zM6 8c0-1.103 0.897-2 2-2h4c1.103 0 2 0.897 2 2v6h-8v-6z">
+        </path>
+      </symbol>
+      <symbol id="icon-stats-dots" viewBox="0 0 32 32">
+        <path
+          d="M4 28h28v4h-32v-32h4zM9 26c-1.657 0-3-1.343-3-3s1.343-3 3-3c0.088 0 0.176 0.005 0.262 0.012l3.225-5.375c-0.307-0.471-0.487-1.033-0.487-1.638 0-1.657 1.343-3 3-3s3 1.343 3 3c0 0.604-0.179 1.167-0.487 1.638l3.225 5.375c0.086-0.007 0.174-0.012 0.262-0.012 0.067 0 0.133 0.003 0.198 0.007l5.324-9.316c-0.329-0.482-0.522-1.064-0.522-1.691 0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3-0.067 0-0.133-0.003-0.198-0.007l-5.324 9.316c0.329 0.481 0.522 1.064 0.522 1.691 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-0.604 0.179-1.167 0.487-1.638l-3.225-5.375c-0.086 0.007-0.174 0.012-0.262 0.012s-0.176-0.005-0.262-0.012l-3.225 5.375c0.307 0.471 0.487 1.033 0.487 1.637 0 1.657-1.343 3-3 3z">
+        </path>
+      </symbol>
+      <symbol id="icon-stats-bars2" viewBox="0 0 32 32">
+        <path
+          d="M9 12h-6c-0.55 0-1 0.45-1 1v18c0 0.55 0.45 1 1 1h6c0.55 0 1-0.45 1-1v-18c0-0.55-0.45-1-1-1zM9 30h-6v-8h6v8zM19 8h-6c-0.55 0-1 0.45-1 1v22c0 0.55 0.45 1 1 1h6c0.55 0 1-0.45 1-1v-22c0-0.55-0.45-1-1-1zM19 30h-6v-10h6v10zM29 4h-6c-0.55 0-1 0.45-1 1v26c0 0.55 0.45 1 1 1h6c0.55 0 1-0.45 1-1v-26c0-0.55-0.45-1-1-1zM29 30h-6v-12h6v12z">
+        </path>
+      </symbol>
+      <symbol id="icon-leaf" viewBox="0 0 32 32">
+        <path
+          d="M31.604 4.203c-3.461-2.623-8.787-4.189-14.247-4.189-6.754 0-12.257 2.358-15.099 6.469-1.335 1.931-2.073 4.217-2.194 6.796-0.108 2.296 0.278 4.835 1.146 7.567 2.965-8.887 11.244-15.847 20.79-15.847 0 0-8.932 2.351-14.548 9.631-0.003 0.004-0.078 0.097-0.207 0.272-1.128 1.509-2.111 3.224-2.846 5.166-1.246 2.963-2.4 7.030-2.4 11.931h4c0 0-0.607-3.819 0.449-8.212 1.747 0.236 3.308 0.353 4.714 0.353 3.677 0 6.293-0.796 8.231-2.504 1.736-1.531 2.694-3.587 3.707-5.764 1.548-3.325 3.302-7.094 8.395-10.005 0.292-0.167 0.48-0.468 0.502-0.804s-0.126-0.659-0.394-0.862z">
+        </path>
+      </symbol>
+      <symbol id="icon-bin" viewBox="0 0 32 32">
+        <path
+          d="M4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14z">
+        </path>
+        <path
+          d="M26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975z">
+        </path>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 32 32">
+        <path d="M2 6h28v6h-28zM2 14h28v6h-28zM2 22h28v6h-28z"></path>
+      </symbol>
+      <symbol id="icon-star-empty" viewBox="0 0 32 32">
+        <path
+          d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798zM16 23.547l-6.983 3.671 1.334-7.776-5.65-5.507 7.808-1.134 3.492-7.075 3.492 7.075 7.807 1.134-5.65 5.507 1.334 7.776-6.983-3.671z">
+        </path>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 32 32">
+        <path
+          d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z">
+        </path>
+      </symbol>
+      <symbol id="icon-cross" viewBox="0 0 32 32">
+        <path
+          d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z">
+        </path>
+      </symbol>
+      <symbol id="icon-checkmark" viewBox="0 0 32 32">
+        <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
+      </symbol>
+      <symbol id="icon-google-plus3" viewBox="0 0 32 32">
+        <path
+          d="M16 0c-8.838 0-16 7.162-16 16s7.162 16 16 16 16-7.163 16-16-7.163-16-16-16zM12 24c-4.425 0-8-3.575-8-8s3.575-8 8-8c2.162 0 3.969 0.787 5.363 2.094l-2.175 2.088c-0.594-0.569-1.631-1.231-3.188-1.231-2.731 0-4.963 2.263-4.963 5.050s2.231 5.050 4.963 5.050c3.169 0 4.356-2.275 4.538-3.45h-4.537v-2.744h7.556c0.069 0.4 0.125 0.8 0.125 1.325 0 4.575-3.063 7.819-7.681 7.819zM26 16v2h-2v-2h-2v-2h2v-2h2v2h2v2h-2z">
+        </path>
+      </symbol>
+      <symbol id="icon-facebook" viewBox="0 0 32 32">
+        <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+      </symbol>
+      <symbol id="icon-twitter" viewBox="0 0 32 32">
+        <path
+          d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z">
+        </path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div id="navbar">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <nav class="navbar col-lg-9 menu nopadding">
+          <div class="menu-logo">
+            <div class="menu-logo-icon">
+              <svg class="icon icon-leaf">
+                <use xlink:href="#icon-leaf"></use>
+              </svg>
+            </div>
+            <div class="menu-logo-title">
+              <h1>TREEHOUSE</h1>
+            </div>
+          </div>
+          <div class="menu-right">
+            <a href="#" class="menu-right-item text-decoration-none">HOME</a>
+            <a href="#" class="menu-right-item text-decoration-none">ABOUT</a>
+            <a href="#" class="menu-right-item text-decoration-none">BLOG</a>
+            <a href="#" class="menu-right-item text-decoration-none">PORTFOLIO</a>
+            <a href="#" class="menu-right-item text-decoration-none">CONTACT</a>
+          </div>
+          <a id="menuLine" href="#" class="menu-right-menuLine text-decoration-none text-dark" onclick="menuOpen()"><svg
+              class="icon icon-menu">
+              <use xlink:href="#icon-menu"></use>
+            </svg></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-12 nopadding image">
+        <div class="image-art">
+          <h2>CREATIVE DIGITAL<br>SOLUTIONS</h2>
+          <p>Proin iaculis purus consequat sem cure</p>
+          <button class="btn btn-success button"><b>VIEW PORTFOLIO</b></button>
+        </div>
+        <div class="image-image">
+          <img src="./img/work-laptop.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="services-title">
+            <h3>PROFESSIONAL SERVİCES</h3>
+            <p class="font-weight-light">Proin iaculis purus consequat sem cure</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="services-image">
+            <svg class="icon icon-heart">
+              <use xlink:href="#icon-heart"></use>
+            </svg>
+          </div>
+          <p><b>BEATIFUL DESIGNS</b></p>
+          <p class="font-weight-light">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Neque enim iusto ab fuga error repellendus aperiam voluptates
+            veritatis cupiditate nobis.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <div class="services-image">
+            <svg class="icon icon-mobile2">
+              <use xlink:href="#icon-mobile2"></use>
+            </svg>
+          </div>
+          <p><b>RESPONSIVE WEB</b></p>
+          <p class="font-weight-light">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Neque enim iusto ab fuga error repellendus aperiam voluptates
+            veritatis cupiditate nobis.
+          </p>
+        </div>
+        <div class=" col-md-4">
+          <div class="services-image">
+            <svg class="icon icon-stats-dots">
+              <use xlink:href="#icon-stats-dots"></use>
+            </svg>
+          </div>
+          <p><b>MARKETING TOOLS</b></p>
+          <p class="font-weight-light">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Neque enim iusto ab fuga error repellendus aperiam voluptates
+            veritatis cupiditate nobis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="justRelax">
+    <div class="container-fluid nopadding">
+      <div class="row nomargin">
+        <div class="col-md-12">
+          <div class="justRelax-art">
+            <h3>JUST RELAX <b class="color">&</b><br>LET US DO THE HEAVY LIFTING</h3>
+            <p class="font-weight-light">Proin iaculis purus consequat sem cure...</p>
+            <p class="font-weight-light">
+              <svg class="icon icon-checkmark justRelaxIcon">
+                <use xlink:href="#icon-checkmark"></use>
+              </svg> &NonBreakingSpace; İntial Setup & Customizations
+            </p>
+            <p class="font-weight-light">
+              <svg class="icon icon-checkmark justRelaxIcon">
+                <use xlink:href="#icon-checkmark"></use>
+              </svg> &NonBreakingSpace; Regular Updates
+            </p>
+            <p class="font-weight-light">
+              <svg class="icon icon-checkmark justRelaxIcon">
+                <use xlink:href="#icon-checkmark"></use>
+              </svg> &NonBreakingSpace; Round The Clock Support
+            </p>
+            <button class="btn btn-success button"><b>LEARN MORE</b></button>
+          </div>
+        </div>
+        <div class="col-12 nopadding justRelax-image">
+          <img src="./img/coast.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lastest">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 lastest-title">
+          <h3>LATEST PROJECT</h3>
+          <p class="font-weight-light">Proin iaculis purus consequat sem cure</p>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-md-5 lastest-art">
+              <div class="col-12 lastest-art-col">
+                <b>DEVELOPING A FRAMEWORK</b>
+              </div>
+              <div class="col-12 lastest-art-col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus quasi eligendi omnis minima, modi
+                obcaecati
+                repellendus, accusantium cumque alias sunt architecto asperiores vitae.
+              </div>
+              <div class="col-12 lastest-art-col">
+                <div class="row">
+                  <div class="col-2"><svg class="icon icon-bin lastestIcon">
+                      <use xlink:href="#icon-bin"></use>
+                    </svg></div>
+                  <div class="col-9"><b>E-Commerce ready</b>
+                    <p class="font-weight-light">Proin iaculis purus consequat sem cure digni ssim.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 lastest-art-col">
+                <div class="row">
+                  <div class="col-2"><svg class="icon icon-checkmark lastestIcon">
+                      <use xlink:href="#icon-checkmark"></use>
+                    </svg></div>
+                  <div class="col-9"><b>Powerfull SEO Features</b>
+                    <p class="font-weight-light">Proin iaculis purus consequat sem cure digni ssim.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 lastest-art-col">
+                <div class="row">
+                  <div class="col-2"><svg class="icon icon-lock lastestIcon">
+                      <use xlink:href="#icon-lock"></use>
+                    </svg></div>
+                  <div class="col-9"><b>Secure Encryption</b>
+                    <p class="font-weight-light">Proin iaculis purus consequat sem cure digni ssim.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 lastest-art-col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Necessitatibus cupiditate est nam magni
+                rerum
+                perfect.
+              </div>
+              <div class="col-12 lastest-art-col">
+                <a class="text-success text-decoration-none"><b>VIEW DETAILS ➔</b></a>
+              </div>
+            </div>
+            <div class="col-md-6 lastest-image">
+              <img src="./img/Treehouse-Home.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="culture">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="culture-title">
+            <h3>CULTURE & VALUES</h3>
+            <p class="font-weight-light">Proin iaculis purus consequat sem cure</p>
+          </div>
+          <div class="col-md-8 culture-circ">
+            <div class="row">
+              <div class="col-2 culture-circ-icon">
+                <svg class="icon icon-music cultureIcon">
+                  <use xlink:href="#icon-music"></use>
+                </svg>
+              </div>
+              <div class="col-3 culture-circ-icon">
+                <object class="culture-circ-icon-borderCenter"></object>
+              </div>
+              <div class="col-2 culture-circ-icon">
+                <svg class="icon icon-stats-dots cultureIcon">
+                  <use xlink:href="#icon-stats-dots"></use>
+                </svg>
+              </div>
+              <div class="col-3 culture-circ-icon">
+                <object class="culture-circ-icon-borderCenter"></object>
+              </div>
+              <div class="col-2 culture-circ-icon">
+                <svg class="icon icon-star-empty cultureIcon">
+                  <use xlink:href="#icon-star-empty"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 culture-art">
+            <div class="row">
+              <div class="col-4">
+                <p><b>WORK-LIFE BALANCE</b></p>
+                <p class="culture-art-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus optio
+                  aperiam doloribus consectetur...
+                <p>
+              </div>
+              <div class="col-4">
+                <p><b>QUALITY OVER QUANTITY</b></p>
+                <p class="culture-art-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus optio
+                  aperiam doloribus consectetur...</p>
+              </div>
+              <div class="col-4">
+                <p><b>DELIVER EXCELLENCE</b></p>
+                <p class="culture-art-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus optio
+                  aperiam doloribus consectetur...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="client">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="client-title">
+            <h3>OUR AWESOME CLIENTS</h3>
+            <p class="font-weight-light">Proin iaculis purus consequat sem cure</p>
+          </div>
+          <div class="col-md-12 client-art">
+            <div class="row">
+              <div class="col-md-2 client-art-image">
+                <svg class="icon icon-user-tie">
+                  <use xlink:href="#icon-user-tie"></use>
+                </svg>
+              </div>
+
+
+              <div class="col-md-9">
+                <div class="row">
+                  <div class="col-1 nopadding">
+                    <div class=" client-art-arrowgrup float-right">
+                      <div class="client-art-arrowgrup-arrow1"></div>
+                      <div class="client-art-arrowgrup-arrow2"></div>
+                    </div>
+                  </div>
+                  <div class="col-11 client-art-frame">
+                    <div class="client-art-frame-comment">
+                      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ipsa ab quasi repellat
+                      inventore, deserunt aperiam amet a perferendis dolorum quam."</div>
+
+                    <p class="text-success client-art-frame-customer">-Jamie RİCHARDSON ,Founder of Cocoa Media</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="row">
+                  <div class="col-11 client-art-frame">
+                    <div class="client-art-frame-comment">
+                      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid optio dolorem temporibus
+                      placeat
+                      delectus minus ea illum cupiditate veniam maiores consectetur laboriosam doloremque quidem iusto.
+                      "
+                    </div>
+
+                    <p class="text-success client-art-frame-customer">-Antony DAVİS ,Founder of Center</p>
+                  </div>
+                  <div class="col-1 nopadding">
+
+                    <div class="client-art-arrowgrup">
+                      <div class="client-art-arrowgrup-arrow3"></div>
+                      <div class="client-art-arrowgrup-arrow4"></div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-2 client-art-image">
+                <svg class="icon icon-user-tie">
+                  <use xlink:href="#icon-user-tie"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="contact-readyTo">
+      <h3>READY TO TALK ABOUT YOUR NEXT PROJECT?</h3>
+    </div>
+    <div class="contact-contactUs">
+      <button class="contact-contactUs-button"><b>CONTACT US</b></button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-frame">
+          <div class="row">
+            <div class="col-12 footer-frame-art">
+              <h5>CONTACT US</h5>
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="icon-location footerIcon">
+                <use xlink:href="#icon-location"></use>
+              </svg> 55 Main St. Toronto, On MIH 3A5
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-mobile2">
+                <use xlink:href="#icon-mobile2"></use>
+              </svg> (416)555-5252
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-envelop">
+                <use xlink:href="#icon-envelop"></use>
+              </svg>hello@treehouse.com
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-frame">
+          <div class="row">
+            <div class="col-12 footer-frame-art">
+              <h5>LASTEST POST</h5>
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-newspaper">
+                <use xlink:href="#icon-newspaper"></use>
+              </svg>Made With Love Toronto
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-newspaper">
+                <use xlink:href="#icon-newspaper"></use>
+              </svg>Startup News & Emerging Tech
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-newspaper">
+                <use xlink:href="#icon-newspaper"></use>
+              </svg>Bitcoin Will Soon Rule The World
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-newspaper">
+                <use xlink:href="#icon-newspaper"></use>
+              </svg> Wearable Technology On The Rise
+            </div>
+            <div class="col-12 footer-frame-art">
+              <svg class="footerIcon icon-newspaper">
+                <use xlink:href="#icon-newspaper"></use>
+              </svg>Learn Web Desing In 30 Days!
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-frame">
+          <div class="row">
+            <div class="col-12 footer-frame-art">
+              <h5>LASTEST TWEETS</h5>
+            </div>
+            <div class="col-12 footer-frame-art">
+              <div class="row">
+                <div class="col-2">
+                  <svg class="footerIcon icon-twitter">
+                    <use xlink:href="#icon-twitter"></use>
+                  </svg>
+                </div>
+                <div class="col-10">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque sed explicabo.
+                  <p class="font-weight-light text-secondary"> 8 min ago</p>
+                </div>
+                <div class="col-2">
+                  <svg class="footerIcon icon-twitter">
+                    <use xlink:href="#icon-twitter"></use>
+                  </svg>
+                </div>
+                <div class="col-10">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque sed explicabo.
+                  <p class="font-weight-light text-secondary"> 8 min ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-socialMediaCopy">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 footer-socialMediaCopy-social">
+            <div class="footer-socialMediaCopy-social-hover">
+              <svg class="footerSocialIcon icon-facebook">
+                <use xlink:href="#icon-facebook"></use>
+              </svg>
+            </div>
+            <div class="footer-socialMediaCopy-social-hover">
+              <svg class="footerSocialIcon icon-twitter">
+                <use xlink:href="#icon-twitter"></use>
+              </svg>
+            </div>
+            <div class="footer-socialMediaCopy-social-hover">
+              <svg class="icon icon-google-plus3">
+                <use xlink:href="#icon-google-plus3"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="col-md-12 text-dark">
+            <p class="footer-socialMediaCopy-copyRight">© Copyright 2014 FreeBiesXpress.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
