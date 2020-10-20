@@ -1,2 +1,10 @@
-@import 'index';
-
+@import './abstracts/mixin.scss';
+@import './abstracts/variables.scss';
+//
+@import './vendors/bootstrap.scss';
+//
+@import './layout/contactUs.scss';
+@import './layout/footer.scss';
+@import './layout/header.scss';
+//
+@import './pages/home.scss';

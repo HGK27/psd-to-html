@@ -1,0 +1,45 @@
+.contact {
+  width: 100%;
+  display: grid;
+  gap: 25px;
+  background-color: $colorGreen;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 40px;
+
+  @include mq('tablet') {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &-readyTo {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    & h3 {
+      @include mq('tablet') {
+        font-size: 2rem;
+      }
+
+      @include mq('desktop') {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  &-contactUs {
+    text-align: center;
+
+    &-button {
+      padding: 10px 30px 10px 30px;
+      background-color: transparent;
+      border-radius: 5px;
+      border: 2px solid white;
+      color: white;
+    }
+    &-button:hover {
+      background-color: rgba(15, 60, 5, 0.3);
+      border: 2px solid $colorGreen;
+      transition: 0.2s;
+    }
+  }
+}

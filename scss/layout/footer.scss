@@ -1,0 +1,78 @@
+.icon-google-plus3 {
+  stroke: currentColor;
+  fill: currentColor;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.footerIcon {
+  color: white;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  padding: 5px;
+}
+.footerSocialIcon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.footer {
+  color: white;
+  width: 100%;
+  background-color: black;
+  padding-top: 25px;
+
+  &-frame {
+    margin-top: 25px;
+    padding-bottom: 25px;
+
+    &-art {
+      margin-top: 7px;
+    }
+  }
+  &-socialMediaCopy {
+    width: 100%;
+    background-color: white;
+    position: static;
+    bottom: 0px;
+    margin-top: 25px;
+    &-social {
+      text-align: center;
+      padding: 25px;
+
+      @include mq('desktop') {
+        position: relative;
+        top: 15px;
+      }
+      &-hover {
+        display: inline;
+        padding: 10px;
+      }
+      &-hover:hover {
+        opacity: 0.6;
+      }
+    }
+    &-copyRight {
+      text-align: center;
+
+      @include mq('desktop') {
+        text-align: left;
+        position: absolute;
+        bottom: 15px;
+      }
+    }
+  }
+}
